@@ -2,12 +2,10 @@ $(function(){
 	$("#fname_error_msg").hide();
 	$("#email_error_msg").hide();
 	$("#password_error_msg").hide();
-	// $("#checkbox_error_msg").hide();
 
 	var error_fname = false;
 	var error_email = false;
 	var error_password = false;
-	// var error_checkbox = false;
 
 	$("#username").focusout(function(){
 		check_fname();
@@ -18,9 +16,6 @@ $(function(){
 	$("#password").focusout(function(){
 		check_password();
 	});
-	// $("#check_1").focusout(function(){
-	// 	check_check_1();
-	// });
 	
 	function check_fname(){
 		var pattern = /^[a-zA-Z]*$/;
@@ -69,31 +64,17 @@ $(function(){
 
 	}
 
-	// function check_check_1(){
-	// 	var checkbox = $("#check_1").val();
-	// 	if(checkbox === "on"){
-	// 		$("#checkbox_error_msg").hide();		
-	// 	}
-	// 	else{
-	// 		$("#checkbox_error_msg").html("You must check the box.");
-	// 		$("#checkbox_error_msg").show();
-	// 		error_checkbox = true;
-	// 	}
-
-	// }
 
 	$("#form").submit(function(){
 		var error_fname = false;
 		var error_email = false;
 		var error_password = false;
-		// var error_checkbox = false;
 
 		check_fname();
 		check_email();
 		check_password();
-		// check_check_1();
 		
-		if(error_fname === false && error_email === false && error_password === false ){ //&& error_checkbox === false
+		if(error_fname === false && error_email === false && error_password === false ){ 
 			 alert("Registration Successfull");
 			 return true;
 		}else{
